@@ -1,5 +1,7 @@
 'use strict';
 
-module.exports = {
+const ManifestGenerator = require('ember-asset-loader/lib/manifest-generator');
+
+module.exports = ManifestGenerator.extend({
   name: require('./package').name
-};
+});
