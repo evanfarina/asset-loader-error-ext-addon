@@ -1,38 +1,11 @@
-external-addon
-==============================================================================
+This addon is meant to be used by a specific host app (see below) to demonstrate a fatal error that is thrown when a host app which contains an engine depends on an external addon (this repo) that relies on, and extends from, ember-asset-loader.
 
-[Short description of the addon.]
+**Repro steps**
 
-
-Compatibility
-------------------------------------------------------------------------------
-
-* Ember.js v3.4 or above
-* Ember CLI v2.13 or above
-* Node.js v8 or above
-
-
-Installation
-------------------------------------------------------------------------------
-
-```
-ember install external-addon
-```
-
-
-Usage
-------------------------------------------------------------------------------
-
-[Longer description of how to use the addon in apps.]
-
-
-Contributing
-------------------------------------------------------------------------------
-
-See the [Contributing](CONTRIBUTING.md) guide for details.
-
-
-License
-------------------------------------------------------------------------------
-
-This project is licensed under the [MIT License](LICENSE.md).
+1. Create a local directory called repro-app
+2. cd repro-app
+3. git clone https://github.com/evanfarina/asset-loader-error-host-app.git (the host app)
+4. git clone https://github.com/evanfarina/asset-loader-error-ext-addon.git (the external addon)
+5. npm install  - note: The host app's package.json contains a relative path to the external addon's directory.
+6. ember serve
+7. Click link that is output on page or visit the `basic-engine` route.
